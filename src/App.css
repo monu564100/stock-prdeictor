@@ -1,0 +1,172 @@
+/* Import de la police */
+@font-face {
+  font-family: 'Intro';
+  src: url('../fonts/IntroDemo-BlackCAPS.woff2') format('woff2'),
+  url('../fonts/IntroDemo-BlackCAPS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Root variables */
+:root {
+  --primary-color: #61dafb;
+  --background-color: #000;
+  --text-color: #ff0000;
+  --accent-color: #ff6f61;
+  --stock-border-color: #39ff14;
+  --stock-name-color: #ffff00;
+  --font-primary: 'Intro', 'Courier New', Courier, monospace;
+  --font-title: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main app styles */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Adjusted to start content from the top */
+  min-height: 100vh; /* Ensure minimum height of viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.App-header {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 6rem;
+  margin-top: 50px;
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Stock item styles */
+.stock-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stock-item {
+  margin: 10px 0; /* Add margin to create gaps between stock items */
+  padding: 15px;
+  border: 2px solid var(--stock-border-color);
+  border-radius: 5px;
+  background-color: #111;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.stock-item:hover {
+  background-color: #222;
+  border-color: var(--stock-border-color);
+}
+
+.stock-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--stock-name-color);
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.disclaimer {
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Responsiveness for mobile devices */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .stock-item {
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .stock-link {
+    font-size: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .legal-info {
+  margin-bottom: 10px;
+}
+
+.footer .social-media {
+  margin-top: 10px;
+}
+
+.footer a {
+  color: #61dafb;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.instagram-icon {
+  width: 24px;
+  vertical-align: middle;
+  margin-right: 5px;
+}

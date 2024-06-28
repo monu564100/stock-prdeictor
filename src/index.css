@@ -1,0 +1,130 @@
+/* Import de la police */
+@font-face {
+  font-family: 'Intro';
+  src: url('../fonts/IntroDemo-BlackCAPS.woff2') format('woff2'),
+  url('../fonts/IntroDemo-BlackCAPS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Root variables */
+:root {
+  --primary-color: #61dafb;
+  --background-color: #000;
+  --text-color: #ff0000;
+  --accent-color: #ff6f61;
+  --stock-border-color: #39ff14;
+  --stock-name-color: #ffff00;
+  --font-primary: 'Intro', 'Courier New', Courier, monospace;
+  --font-title: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main app styles */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+.App-header {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 6rem;
+  margin-top: 50px;
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Stock item styles */
+ul > .stock-item {
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid var(--stock-border-color);
+  border-radius: 5px;
+  background-color: #111;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.stock-item:hover {
+  background-color: #222;
+  border-color: var(--stock-border-color);
+}
+
+.stock-item .stock-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--stock-name-color);
+  border: 2px solid var(--stock-border-color);
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+}
+
+/* Responsiveness for mobile devices */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  ul > .stock-item {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .stock-item .stock-name {
+    font-size: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+}
